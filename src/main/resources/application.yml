@@ -1,0 +1,10 @@
+spring:
+  profiles: develop
+
+environment: "dev"
+
+---
+spring:
+  profiles: production
+
+environment: "prod"
