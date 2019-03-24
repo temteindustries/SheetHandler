@@ -32,4 +32,11 @@ public class GuestObject {
     public String getReception() {
         return reception;
     }
+
+    public String toString(){
+        return "{\"firstname\":\""+getfName()+"\"," +
+                "\"lastname\":\""+getlName()+"\"," +
+                "\"ceremony\":\""+getCeremony()+"\"," +
+                "\"reception\":\""+getReception()+"\"}";
+    }
 }
