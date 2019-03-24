@@ -1,4 +1,10 @@
 spring:
+  profiles: default
+
+environment: "default"
+
+---
+spring:
   profiles: develop
 
 environment: "dev"

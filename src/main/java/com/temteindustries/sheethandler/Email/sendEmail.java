@@ -51,7 +51,7 @@ public class sendEmail {
             //Setting the recepients from the address variable
             msg.setRecipients(Message.RecipientType.TO, address);
 
-            if(environment.equals("dev")){
+            if(!environment.equals("prod")){
                 msg.setSubject("Test RSVP (dev)");
             }else{
                 msg.setSubject("New RSVP");
