@@ -3,6 +3,7 @@ package com.temteindustries.sheethandler.Email;
 import com.temteindustries.sheethandler.TemplateEmail.EmailTemplateObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -11,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
+@Service
 public class sendEmail {
 
     private static String environment;
