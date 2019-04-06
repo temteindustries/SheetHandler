@@ -15,8 +15,8 @@ public class CacheUtils {
         for(int i = 0; i< guestList.size(); i++){
             Map<String,Object> guest = parser.parseMap(guestList.get(i).toString());
             GuestObject guestObject = new GuestObject();
-            guestObject.setFName(guest.get("fName").toString());
-            guestObject.setLName(guest.get("lName").toString());
+            guestObject.setFName(guest.get("firstname").toString());
+            guestObject.setLName(guest.get("lastname").toString());
             guestObject.setCeremony(guest.get("ceremony").toString());
             guestObject.setReception(guest.get("reception").toString());
             cache.put(cache.size()+1,guestObject);

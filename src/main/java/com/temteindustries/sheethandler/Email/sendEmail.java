@@ -66,7 +66,6 @@ public class sendEmail {
         } catch (MessagingException mex) {
             System.out.println("Unable to send an email" + mex);
         }
-
         return msgSent;
     }
 

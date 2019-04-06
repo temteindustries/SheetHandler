@@ -9,21 +9,10 @@ import java.util.Map;
 
 public class EmailTemplateObject {
 
-
-
     public static String getHtml(List<Object> guestList){
         GsonJsonParser parser = new GsonJsonParser();
 
         String HTMLDoc;
-        String HTMLTop = null;
-        String HTMLBottom = null;
-
-        try {
-            HTMLTop = new String(Files.readAllBytes(Paths.get("src/main/resources/static/templates/RSVPemail-part1.html")), "UTF-8");
-            HTMLBottom = new String(Files.readAllBytes(Paths.get("src/main/resources/static/templates/RSVPemail-part2.html")), "UTF-8");
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
 
         String HTMLMiddle = "";
         for(int i = 0; i < guestList.size(); i++){
@@ -37,8 +26,34 @@ public class EmailTemplateObject {
                     "    <td>"+guest.get("reception")+"</td>\n" +
                     "</tr>\n";
         }
-        HTMLDoc = HTMLTop + HTMLMiddle + HTMLBottom;
+        HTMLDoc = getRSVP1() + HTMLMiddle + getRSVP2();
         return HTMLDoc;
     }
 
+    private static String getRSVP1(){
+        return "<!DOCTYPE html>\n" +
+                "<html>\n" +
+                "<head>\n" +
+                "<title>Temte Wedding</title>\n" +
+                " \n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<table style=\"color: #090940; text-align: center; border: 2px solid #A18700; border-collapse: collapse;\">\n" +
+                "\n" +
+                "\t<tr><td colspan=\"4\"><h1 style=\"text-align: center; color: #A18700; font-size: 35px; font-weight: bold;\">New RSVP</h1></td></tr>\n" +
+                "\t<tr id=\"header\" style=\"text-align: center; color: #090940; font-size: 22px; font-weight: bold;\">\n" +
+                "\t\t<td style=\" border: 2px solid #A18700; \"><h4>First Name</h4></td>\n" +
+                "\t\t<td style=\" border: 2px solid #A18700; \"><h4>Last Name</h4></td>\n" +
+                "\t\t<td style=\" border: 2px solid #A18700; \"><h4>Ceremony</h4></td>\n" +
+                "\t\t<td style=\" border: 2px solid #A18700; \"><h4>Reception</h4></td>\n" +
+                "\t</tr>";
+    }
+
+    private static String getRSVP2(){
+        return "\n" +
+                "\t</table>\n" +
+                "\t</div>\n" +
+                "</body>\n" +
+                "</html>\n";
+    }
 }
