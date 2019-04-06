@@ -20,8 +20,8 @@ public class EmailTemplateObject {
             Map<String,Object> guest = parser.parseMap(guestList.get(i).toString());
 
             HTMLMiddle = HTMLMiddle+"<tr>\n" +
-                    "    <td>"+guest.get("fName")+"</td>\n" +
-                    "    <td>"+guest.get("lName")+"</td>\n" +
+                    "    <td>"+guest.get("firstname")+"</td>\n" +
+                    "    <td>"+guest.get("lastname")+"</td>\n" +
                     "    <td>"+guest.get("ceremony")+"</td>\n" +
                     "    <td>"+guest.get("reception")+"</td>\n" +
                     "</tr>\n";
