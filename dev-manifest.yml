@@ -1,0 +1,11 @@
+---
+instances: 1
+applications:
+- name: SheetHandler
+  memory: 1024M
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  host: sheethandler-dev
+
+
+env:
+  SPRING_PROFILES_ACTIVE: develop
